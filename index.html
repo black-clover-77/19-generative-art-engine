@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Generative Art Engine | VishwaNova 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../shared/experience-kit.css" />
+    <link rel="stylesheet" href="../shared/mobile.css" />
+    <link rel="stylesheet" href="../shared/soundkit.css" />
+  <link rel="stylesheet" href="../shared/fx-kit.css" />
+  <link rel="stylesheet" href="../shared/engagement-kit.css" />
+</head>
+<body>
+  <div id="loader"><div class="loader-content"><div class="loader-ring"></div><p class="loader-text">Loading Art Engine...</p></div></div>
+  <audio id="bg-audio" loop src="https://cdn.pixabay.com/audio/2022/03/10/audio_82c2e0f2f3.mp3?v=1"></audio>
+  <button id="audio-toggle">🎵</button>
+  <main id="app">
+    <canvas id="artCanvas"></canvas>
+    <div id="toolbar">
+      <button class="tool-btn active" data-mode="flow">🌊 Flow Field</button>
+      <button class="tool-btn" data-mode="splatter">💥 Splatter</button>
+      <button class="tool-btn" data-mode="spiral">🌀 Spiral</button>
+      <button class="tool-btn" data-mode="tree">🌳 Fractal Tree</button>
+      <button id="clearBtn" class="tool-btn">🗑️ Clear</button>
+      <button id="saveBtn" class="tool-btn">💾 Save</button>
+    </div>
+    <div id="palette">
+      <div class="color-dot" style="background:#FF6B6B" data-color="#FF6B6B"></div>
+      <div class="color-dot" style="background:#4ECDC4" data-color="#4ECDC4"></div>
+      <div class="color-dot active" style="background:#00ffcc" data-color="#00ffcc"></div>
+      <div class="color-dot" style="background:#FFE66D" data-color="#FFE66D"></div>
+      <div class="color-dot" style="background:#FF00FF" data-color="#FF00FF"></div>
+      <div class="color-dot" style="background:#FFFFFF" data-color="#FFFFFF"></div>
+    </div>
+    <div id="hero-text"><h1>GENERATIVE ART ENGINE</h1><p class="sub">Tap & drag to create algorithmic art</p></div>
+  </main>
+  <footer class="github-badge"><a href="https://github.com/shresss-27" target="_blank">⭐ GitHub</a><span>VishwaNova 2026</span></footer>
+  <script src="../shared/soundkit.js" defer></script>
+    <script src="../shared/experience-kit.js" defer></script>
+    <script src="../shared/engagement-kit.js" defer></script>
+    <script src="../shared/experience-configs-1-21.js" defer></script>
+    <script src="../shared/fx-kit.js" defer></script>
+    <script src="script.js"></script>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const parts = location.pathname.split("/").filter(Boolean);
+        const slug = parts[parts.length - 2] || "";
+        const cfg = window.WeboReelsExperienceConfigs1to21?.[slug] || { title: document.title };
+        window.WeboReelsExperienceKit?.init?.(cfg);
+      });
+    </script>
+</body>
+</html>
